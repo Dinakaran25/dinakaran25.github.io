@@ -164,14 +164,20 @@ section{padding:clamp(56px,9vw,110px) 0}
 .sec-head h2{margin-top:14px}
 .sec-head p{color:var(--muted);margin-top:14px}
 
-/* capability grid */
-.caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;
+/* capability grid — fixed 3 columns x 2 rows */
+.caps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
   background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
 .cap{background:var(--ink-2);padding:26px 24px;transition:background .25s}
 .cap:hover{background:var(--panel)}
 .cap .k{font-family:var(--mono);font-size:11px;color:var(--teal);letter-spacing:.1em}
 .cap h3{margin:12px 0 8px}
 .cap p{font-size:14.5px;color:var(--muted);line-height:1.6}
+@media(max-width:900px){
+  .caps{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .caps{grid-template-columns:1fr}
+}
 
 /* experience rail */
 .rail{position:relative;padding-left:34px}
